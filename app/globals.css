@@ -3,7 +3,21 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1F2328;
+
+  --muted: #f1f4f5;
+  --border: #d4d9df;
+
+  --hover: #f1f4f5;
+  --selected: #eceff0;
+
+  --button: #f7f8fa;
+  --button-hover: #eef2f5;
+
+  --code-background: #F6F8FA;
+  --code-foreground: #1F2328;
+
+  --link: #0969DA;
 }
 
 @theme inline {
@@ -15,8 +29,22 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+      --background: #0D1117;
+      --foreground: #F0F6FC;
+
+      --muted: #010409;
+      --border: #3d444c;
+
+      --hover: #16191e;
+      --selected: #16191e;
+
+      --button: #212830;
+      --button-hover: #282c35;
+
+      --code-background: #151B23;
+      --code-foreground: #F0F6FC;
+
+      --link: #4493F8;
   }
 }
 

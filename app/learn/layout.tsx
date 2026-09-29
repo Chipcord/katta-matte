@@ -6,12 +6,12 @@ export default function LearnLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex">
-      <aside className="w-64">
+    <div>
+      <aside className="fixed left-0 top-0 h-screen w-80">
         <Sidebar />
       </aside>
 
-      <main className="flex-1">
+      <main className="ml-80">
         {children}
       </main>
     </div>

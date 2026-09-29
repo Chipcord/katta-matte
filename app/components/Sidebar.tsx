@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import Link from "next/link";
+import SidebarLink from "./SidebarLink";
 
 const contentPath = path.join(process.cwd(), "content", "learn");
 
@@ -26,7 +26,18 @@ export default function Sidebar() {
   const courses = fs.readdirSync(contentPath);
 
   return (
-    <nav>
+    <nav
+      className="
+        dark:bg-[var(--muted)]
+        text-[var(--foreground)]
+        border-r
+        border-[var(--border)]
+        p-2
+        pt-5
+        h-screen
+        cursor-default
+      "
+    >
       {courses.map((course) => {
         const coursePath = path.join(contentPath, course);
 
@@ -36,7 +47,9 @@ export default function Sidebar() {
 
         return (
           <div key={course}>
-            <h2>{course}</h2>
+            <h2 className="text-3xl font-bold p-2 mb-1 border-b border-[var(--border)]">
+              {course + " Matte"}
+            </h2>
 
             {chapters.map((chapter) => {
               const chapterPath = path.join(
@@ -54,7 +67,9 @@ export default function Sidebar() {
 
               return (
                 <div key={chapter.name}>
-                  <h3>{chapterTitle}</h3>
+                  <h3 className="text-xl font-bold p-2 mb-1 border-b border-[var(--border)]">
+                    {chapterTitle}
+                  </h3>
 
                   {lessons.map((lesson) => {
                     const filePath = path.join(
@@ -69,14 +84,15 @@ export default function Sidebar() {
                       ""
                     );
 
+                    const href = `/learn/${course}/${chapter.name}/${lessonName}`;
+
                     return (
-                      <div key={lesson}>
-                        <Link
-                          href={`/learn/${course}/${chapter.name}/${lessonName}`}
-                        >
-                          {title}
-                        </Link>
-                      </div>
+                      <SidebarLink
+                        key={lesson}
+                        href={href}
+                      >
+                        {title}
+                      </SidebarLink>
                     );
                   })}
                 </div>

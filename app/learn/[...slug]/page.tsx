@@ -1,6 +1,7 @@
 import fs from "fs/promises";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
+import TopicNavigation from "@/app/components/TopicNavigation";
 
 export default async function LearnPage({
   params,
@@ -22,33 +23,54 @@ export default async function LearnPage({
     source,
   });
 
+  const currentPath = `/learn/${slug.join("/")}`;
+
   return (
-    <main
-      className="
+    <>
+      <main
+        className="
+          prose
+          max-w-none
+          p-10
 
-        /* --- Prose --- */
-        prose
-        dark:prose-invert
-        max-w-none
+          /* Headings */
+          prose-headings:text-[var(--foreground)]
 
-        prose-h1:border-b
-        prose-h1:border-gray-800
-        prose-h1:pb-3
+          prose-h1:border-b
+          prose-h1:border-[var(--border)]
+          prose-h1:pb-3
 
-        prose-h2:border-b
-        prose-h2:border-gray-800
-        prose-h2:pb-2
+          prose-h2:border-b
+          prose-h2:border-[var(--border)]
+          prose-h2:pb-2
 
-        prose-h3:border-b
-        prose-h3:border-gray-800
-        prose-h3:pb-2
+          prose-h3:border-b
+          prose-h3:border-[var(--border)]
+          prose-h3:pb-2
 
+          /* Body */
+          prose-p:text-[var(--foreground)]
 
-        /* --- Content --- */
-        p-10
-      "
-    >
-      {content}
-    </main>
+          /* Links */
+          prose-a:text-[var(--link)]
+
+          /* Code */
+          prose-code:text-[var(--code-foreground)]
+          prose-code:bg-[var(--code-background)]
+
+          prose-pre:bg-[var(--code-background)]
+          prose-pre:text-[var(--code-foreground)]
+
+          /* Muted */
+          prose-blockquote:text-[var(--muted)]
+
+          /* Borders */
+          prose-hr:border-[var(--border)]
+        "
+      >
+        {content}
+      </main>
+      <TopicNavigation currentPath={currentPath} />
+    </>
   );
 }
