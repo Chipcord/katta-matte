@@ -2,6 +2,8 @@ import fs from "fs/promises";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import TopicNavigation from "@/app/components/TopicNavigation";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 export default async function LearnPage({
   params,
@@ -20,8 +22,14 @@ export default async function LearnPage({
   const source = await fs.readFile(filePath, "utf8");
 
   const { content } = await compileMDX({
-    source,
-  });
+      source,
+      options: {
+        mdxOptions: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
+      },
+    });
 
   const currentPath = `/learn/${slug.join("/")}`;
 
@@ -66,6 +74,13 @@ export default async function LearnPage({
 
           /* Borders */
           prose-hr:border-[var(--border)]
+
+          /* Math */
+          [&_.katex]:text-[var(--foreground)]
+          [&_.katex-display]:my-6
+          [&_.katex-display]:rounded-lg
+          [&_.katex-display]:bg-[var(--code-background)]
+          [&_.katex-display]:p-6
         "
       >
         {content}
