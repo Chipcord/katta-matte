@@ -69,11 +69,17 @@ export default async function LearnPage({
           prose-pre:bg-[var(--code-background)]
           prose-pre:text-[var(--code-foreground)]
 
-          /* Muted */
+          /* Blockquotes */
           prose-blockquote:text-[var(--muted)]
+          prose-blockquote:not-italic
+          [&_:is(blockquote,p)::before]:content-['']
+          [&_:is(blockquote,p)::after]:content-['']
 
           /* Borders */
           prose-hr:border-[var(--border)]
+
+          /* Lists */
+          prose-li:text-[var(--foreground)]
 
           /* Math */
           [&_.katex]:text-[var(--foreground)]

@@ -18,6 +18,8 @@
   --code-background: #F6F8FA;
   --code-foreground: #1F2328;
 
+  --accent-foreground: #59636E;
+
   --link: #0969DA;
 }
 
@@ -36,14 +38,16 @@
       --muted: #010409;
       --border: #3d444c;
 
-      --hover: #16191e;
-      --selected: #16191e;
+      --hover: #1E232A;
+      --selected: #1E232A;
 
       --button: #212830;
       --button-hover: #282c35;
 
       --code-background: #151B23;
       --code-foreground: #F0F6FC;
+
+      --accent-foreground: #9198A1;
 
       --link: #4493F8;
   }

@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import SidebarLink from "./SidebarLink";
+import SidebarChapter from "./SidebarChapter";
 
 const contentPath = path.join(process.cwd(), "content", "learn");
 
@@ -28,7 +29,6 @@ export default function Sidebar() {
   return (
     <nav
       className="
-        dark:bg-[var(--muted)]
         text-[var(--foreground)]
         border-r
         border-[var(--border)]
@@ -47,7 +47,7 @@ export default function Sidebar() {
 
         return (
           <div key={course}>
-            <h2 className="text-3xl font-bold p-2 mb-1 border-b border-[var(--border)]">
+            <h2 className="text-2xl font-bold p-2 mb-1 border-b border-[var(--border)]">
               {course + " Matte"}
             </h2>
 
@@ -66,12 +66,10 @@ export default function Sidebar() {
                 .sort();
 
               return (
-                <div key={chapter.name}>
-                  <h3 className="text-xl font-bold p-2 mb-1 border-b border-[var(--border)]">
-                    {chapterTitle}
-                  </h3>
-
-                  {lessons.map((lesson) => {
+                <SidebarChapter
+                  key={chapter.name}
+                  title={chapterTitle}
+                  lessons={lessons.map((lesson) => {
                     const filePath = path.join(
                       chapterPath,
                       lesson
@@ -84,18 +82,12 @@ export default function Sidebar() {
                       ""
                     );
 
-                    const href = `/learn/${course}/${chapter.name}/${lessonName}`;
-
-                    return (
-                      <SidebarLink
-                        key={lesson}
-                        href={href}
-                      >
-                        {title}
-                      </SidebarLink>
-                    );
+                    return {
+                      title,
+                      href: `/learn/${course}/${chapter.name}/${lessonName}`,
+                    };
                   })}
-                </div>
+                />
               );
             })}
           </div>

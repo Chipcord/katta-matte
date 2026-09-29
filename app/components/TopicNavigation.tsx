@@ -84,21 +84,29 @@ export default function TopicNavigation({
       : null;
 
   return (
-    <nav className="flex justify-between p-10 space-x-3">
-      {previousTopic ? (
-        <Link className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-md" href={previousTopic}>
+    <nav
+      className={`flex p-10 ${
+        previousTopic && nextTopic
+          ? "gap-3"
+          : "justify-between"
+      }`}
+    >
+      {previousTopic && (
+        <Link
+          className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-md"
+          href={previousTopic}
+        >
           Forrige
         </Link>
-      ) : (
-        <span />
       )}
 
-      {nextTopic ? (
-        <Link className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-md" href={nextTopic}>
+      {nextTopic && (
+        <Link
+          className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-md"
+          href={nextTopic}
+        >
           Neste
         </Link>
-      ) : (
-        <span />
       )}
     </nav>
   );

@@ -22,9 +22,10 @@ export default function SidebarLink({
         pl-3
         rounded-md
         border-l-3
+        ml-3
         ${
           isSelected
-            ? "border-[var(--link)] bg-[var(--selected)]"
+            ? "border-[var(--link)] bg-[var(--selected)] rounded-l-xs"
             : "border-transparent hover:bg-[var(--hover)]"
         }
       `}

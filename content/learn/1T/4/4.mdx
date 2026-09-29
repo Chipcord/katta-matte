@@ -1,0 +1,80 @@
+# 4.4 Polynomdivisjon
+
+Polynomdivisjon er egentlig ganske simpelt. Du skal dele slik du lærte i barneskolen, så hvis vi har
+
+$$
+x^2 +5x + 6 \div (x + 2) =
+$$
+
+da må vi se hva vi må gange $x$ med for å få det første leddet i telleren vår, som er $x^2$. Da må vi selvfølgelig gange $x$ med $x$ for å få $x^2$, og vi setter det opp sånn som i barneskolen:
+
+$$
+x^2 +5x + 6 \div (x + 2) = x
+$$
+
+Så trekker vi fra produktet vi får av å gange nevneren med $x$
+
+$$
+\begin{aligned}
+x^2 + 5x + 6 &\div (x+2) = x \\
+-(x^2 + 2x)& \\
+\hline
+3x + 6&
+\end{aligned}
+$$
+
+Så gjør vi det om igjen, til vi får $0$ eller en rest etter å ha trukket fra produktet (i dette tilfellet har vi ingen rest)
+
+$$
+\begin{aligned}
+x^2 + 5x + 6 &\div (x+2) = x+3 \\
+-(x^2 + 2x)& \\
+\hline
+3x + 6& \\
+-(3x + 6)& \\
+\hline
+0&
+\end{aligned}
+$$
+
+## Hva om vi får en rest?
+
+> Null stress, bare del resten på nevneren. Det blir litt stygt, men det kan vi ikke gjøre noe med. Resten er viktig for å kunne faktorisere tredjegradsuttrykk, men det kommer vi tilbake til!
+
+$$
+x^2 +5x + 7 \div (x + 2) = x
+$$
+
+$$
+\begin{aligned}
+x^2 + 5x + 7 &\div (x+2) = x \\
+-(x^2 + 2x)& \\
+3x + 7&
+\end{aligned}
+$$
+
+$$
+3x\div x=3
+$$
+
+$$
+3(x+2)=3x+6
+$$
+
+$$
+\begin{aligned}
+x^2 + 5x + 7 &\div (x+2) = x+3 \\
+-(x^2 + 2x)& \\
+3x + 7& \\
+-(3x + 6)& \\
+1&
+\end{aligned}
+$$
+
+Nå har vi fått en rest. Siden resten $1$ har lavere grad enn nevneren $x+2$, kan vi ikke fortsette divisjonen.
+
+Dermed blir svaret:
+
+$$
+x+3+\frac{1}{x+2}
+$$
