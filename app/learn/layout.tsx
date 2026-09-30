@@ -11,8 +11,10 @@ export default function LearnLayout({
         <Sidebar />
       </aside>
 
-      <main className="ml-80">
-        {children}
+      <main className="ml-80 flex justify-center">
+        <div className="w-full max-w-5xl">
+          {children}
+        </div>
       </main>
     </div>
   );

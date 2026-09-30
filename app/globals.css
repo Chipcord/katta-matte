@@ -15,6 +15,10 @@
   --button: #f7f8fa;
   --button-hover: #eef2f5;
 
+  --button-accent: #29903B;
+  --button-accent-hover: #46954A;
+  --button-accent-border: #57AB5A;
+
   --code-background: #F6F8FA;
   --code-foreground: #1F2328;
 
@@ -44,6 +48,10 @@
       --button: #212830;
       --button-hover: #282c35;
 
+      --button-accent: #29903B;
+      --button-accent-hover: #46954A;
+      --button-accent-border: #57AB5A;
+
       --code-background: #151B23;
       --code-foreground: #F0F6FC;
 
@@ -56,5 +64,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Geist;
 }
