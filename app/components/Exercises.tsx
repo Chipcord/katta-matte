@@ -11,7 +11,7 @@ type Exercise = {
 
 function renderMath(text: string) {
   return text
-    .replace(/\$\$(.*?)\$\$/gs, (_, math) =>
+    .replace(/\$\$([\s\S]*?)\$\$/g, (_, math) =>
       katex.renderToString(math, {
         displayMode: true,
         throwOnError: false,
