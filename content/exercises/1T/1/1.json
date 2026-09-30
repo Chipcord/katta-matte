@@ -1,52 +1,202 @@
 [
   {
-    "question": "What is $2 + 2$?",
+    "question": "Hva er $3 + 4 \\cdot 2$?",
     "options": [
-      "3",
-      "4",
-      "5",
-      "6"
+      "14",
+      "11",
+      "10",
+      "8"
     ],
     "answer": 1
   },
   {
-    "question": "What is $3^2$?",
+    "question": "Hva er $12 - 6 \\div 2$?",
     "options": [
+      "3",
       "6",
       "9",
-      "12",
-      "18"
+      "12"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $5 \\cdot 3 + 2$?",
+    "options": [
+      "25",
+      "17",
+      "16",
+      "13"
     ],
     "answer": 1
   },
-{
-  "question": "What is $3^2$?",
-  "options": [
-    "6",
-    "9",
-    "12",
-    "18"
-  ],
-  "answer": 1
-},
-{
-  "question": "What is $3^2$?",
-  "options": [
-    "6",
-    "9",
-    "12",
-    "18"
-  ],
-  "answer": 1
-},
-{
-  "question": "What is $3^2$?",
-  "options": [
-    "6",
-    "9",
-    "12",
-    "18"
-  ],
-  "answer": 1
-}
+  {
+    "question": "Hva er $20 - 4 \\cdot 3$?",
+    "options": [
+      "48",
+      "12",
+      "8",
+      "16"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $2^3 + 4$?",
+    "options": [
+      "10",
+      "12",
+      "14",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $3 + 2^2$?",
+    "options": [
+      "7",
+      "10",
+      "12",
+      "16"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $18 \\div 3 \\cdot 2$?",
+    "options": [
+      "3",
+      "6",
+      "12",
+      "18"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $8 + 12 \\div 4$?",
+    "options": [
+      "5",
+      "8",
+      "11",
+      "20"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $10 - 2 \\cdot 3$?",
+    "options": [
+      "4",
+      "8",
+      "24",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $6 + 8 \\div 2$?",
+    "options": [
+      "7",
+      "10",
+      "14",
+      "28"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hva er $4 \\cdot 2^2$?",
+    "options": [
+      "16",
+      "32",
+      "12",
+      "8"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $5^2 - 10$?",
+    "options": [
+      "10",
+      "15",
+      "20",
+      "25"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $24 \\div 4 + 3$?",
+    "options": [
+      "9",
+      "6",
+      "12",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $7 + 3 \\cdot 4$?",
+    "options": [
+      "40",
+      "19",
+      "28",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hva er $16 \\div 2^2$?",
+    "options": [
+      "2",
+      "4",
+      "8",
+      "16"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hva er $9 - 2^2$?",
+    "options": [
+      "28",
+      "7",
+      "5",
+      "1"
+    ],
+    "answer": 2
+  },
+  {
+    "question": "Hva er $2 \\cdot 5 + 6 \\div 3$?",
+    "options": [
+      "12",
+      "16",
+      "22",
+      "8"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hva er $30 - 12 \\div 3$?",
+    "options": [
+      "6",
+      "26",
+      "18",
+      "10"
+    ],
+    "answer": 1
+  },
+  {
+    "question": "Hva er $3^2 + 4 \\cdot 2$?",
+    "options": [
+      "17",
+      "26",
+      "13",
+      "18"
+    ],
+    "answer": 0
+  },
+  {
+    "question": "Hva er $20 \\div 5 + 2^3$?",
+    "options": [
+      "10",
+      "12",
+      "16",
+      "32"
+    ],
+    "answer": 1
+  }
 ]

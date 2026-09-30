@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import katex from "katex";
 
 type Exercise = {
@@ -42,9 +42,7 @@ function ExerciseQuiz({
 }: {
   exercises: Exercise[];
 }) {
-  const [quizExercises, setQuizExercises] = useState(() =>
-    getRandomExercises(exercises)
-  );
+  const [quizExercises, setQuizExercises] = useState<Exercise[]>([]);
 
   const [exerciseIndex, setExerciseIndex] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(
@@ -52,6 +50,14 @@ function ExerciseQuiz({
   );
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
+
+  useEffect(() => {
+    setQuizExercises(getRandomExercises(exercises));
+  }, [exercises]);
+
+  if (quizExercises.length === 0) {
+    return null;
+  }
 
   const exercise = quizExercises[exerciseIndex];
 
@@ -94,7 +100,16 @@ function ExerciseQuiz({
 
   if (finished) {
     return (
-      <section className="p-5 m-10 rounded-lg bg-[var(--code-background)]">
+      <section
+        className="
+          mx-4
+          sm:mx-6
+          lg:mx-10
+          p-5
+          rounded-lg
+          bg-[var(--code-background)]
+        "
+      >
         <h2 className="text-2xl font-bold text-[var(--foreground)]">
           Resultat
         </h2>
@@ -126,7 +141,16 @@ function ExerciseQuiz({
   }
 
   return (
-    <section className="p-5 m-10 rounded-lg bg-[var(--code-background)]">
+    <section
+      className="
+        mx-4
+        sm:mx-6
+        lg:mx-10
+        p-5
+        rounded-lg
+        bg-[var(--code-background)]
+      "
+    >
       <h2 className="text-2xl font-bold text-[var(--foreground)]">
         Oppgave {exerciseIndex + 1} av 5
       </h2>

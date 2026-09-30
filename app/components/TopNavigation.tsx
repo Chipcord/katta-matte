@@ -8,7 +8,7 @@ export default function TopNavigation() {
 
       <div className="fixed z-10 bg-[var(--muted)] border-b border-[var(--border)] w-full h-16 p-5 flex items-center justify-between">
         <Link href={"../../../"}>KattaMatte</Link>
-        <Link href={"https://chip-studios.vercel.app/"}>© hm</Link>
+        <Link href={"https://chip-studios.vercel.app/"}>© hm-1ste 2026</Link>
       </div>
     </nav>
   );
