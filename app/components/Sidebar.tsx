@@ -1,6 +1,5 @@
 import fs from "fs";
 import path from "path";
-import SidebarLink from "./SidebarLink";
 import SidebarChapter from "./SidebarChapter";
 
 const contentPath = path.join(process.cwd(), "content", "learn");
