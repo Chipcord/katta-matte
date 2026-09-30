@@ -47,7 +47,7 @@
       "14",
       "16"
     ],
-    "answer": 0
+    "answer": 1
   },
   {
     "question": "Hva er $3 + 2^2$?",
@@ -117,7 +117,7 @@
       "20",
       "25"
     ],
-    "answer": 2
+    "answer": 1
   },
   {
     "question": "Hva er $24 \\div 4 + 3$?",
@@ -167,7 +167,7 @@
       "22",
       "8"
     ],
-    "answer": 1
+    "answer": 0
   },
   {
     "question": "Hva er $30 - 12 \\div 3$?",

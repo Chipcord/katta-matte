@@ -152,7 +152,7 @@ function ExerciseQuiz({
       "
     >
       <h2 className="text-2xl font-bold text-[var(--foreground)]">
-        Oppgave {exerciseIndex + 1} av 5
+        (KI GENERERT) Oppgave {exerciseIndex + 1} av 5
       </h2>
 
       <p
@@ -203,7 +203,9 @@ function ExerciseQuiz({
                 }
               `}
               dangerouslySetInnerHTML={{
-                __html: renderMath(option),
+                __html: katex.renderToString(option, {
+                  throwOnError: false,
+                }),
               }}
             />
           );
