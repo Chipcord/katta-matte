@@ -5,6 +5,9 @@ import TopicNavigation from "@/app/components/TopicNavigation";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
 
+import { Exercises } from "@/app/components/Exercises";
+
+
 export default async function LearnPage({
   params,
 }: {
@@ -32,6 +35,33 @@ export default async function LearnPage({
     });
 
   const currentPath = `/learn/${slug.join("/")}`;
+
+  const exercisePath =
+    path.join(
+      process.cwd(),
+      "content",
+      "exercises",
+      ...slug
+    ) + ".json";
+
+  let exercises: Exercise[] = [];
+
+  try {
+    const exerciseSource = await fs.readFile(
+      exercisePath,
+      "utf8"
+    );
+
+    exercises = JSON.parse(exerciseSource);
+  } catch {
+    exercises = [];
+  }
+
+  type Exercise = {
+    question: string;
+    options: string[];
+    answer: number;
+  };
 
   return (
     <>
@@ -91,6 +121,9 @@ export default async function LearnPage({
       >
         {content}
       </main>
+      {exercises.length > 0 && (
+        <Exercises exercises={exercises} />
+      )}
       <TopicNavigation currentPath={currentPath} />
     </>
   );
