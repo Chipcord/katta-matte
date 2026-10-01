@@ -93,7 +93,7 @@ export default function TopicNavigation({
     >
       {previousTopic && (
         <Link
-          className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-lg"
+          className="button"
           href={previousTopic}
         >
           Forrige emne
@@ -102,7 +102,7 @@ export default function TopicNavigation({
 
       {nextTopic && (
         <Link
-          className="text-center p-3 border shadow-sm border-[var(--border)] bg-[var(--button)] hover:bg-[var(--button-hover)] h-full w-full rounded-lg"
+          className="button"
           href={nextTopic}
         >
           Neste emne

@@ -35,30 +35,52 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-      --background: #0D1117;
-      --foreground: #F0F6FC;
+    :root {
+       --background: #0D1117;
+       --foreground: #F0F6FC;
 
-      --muted: #010409;
-      --border: #3d444c;
+       --muted: #010409;
+       --border: #3d444c;
 
-      --hover: #1E232A;
-      --selected: #1E232A;
+       --hover: #1E232A;
+       --selected: #1E232A;
 
-      --button: #212830;
-      --button-hover: #282c35;
+       --button: #212830;
+       --button-hover: #282c35;
 
-      --button-accent: #29903B;
-      --button-accent-hover: #46954A;
-      --button-accent-border: #57AB5A;
+       --button-accent: #29903B;
+       --button-accent-hover: #46954A;
+       --button-accent-border: #57AB5A;
 
-      --code-background: #151B23;
-      --code-foreground: #F0F6FC;
+       --code-background: #151B23;
+       --code-foreground: #F0F6FC;
 
-      --accent-foreground: #9198A1;
+       --accent-foreground: #9198A1;
 
-      --link: #4493F8;
+       --link: #4493F8;
+      }
+}
+
+@layer components {
+
+    .button {
+    @apply text-center p-3 border shadow-sm
+           border-[var(--border)]
+           bg-[var(--button)]
+           hover:bg-[var(--button-hover)]
+           h-full w-full rounded-lg
+           text-[var(--foreground)];
   }
+
+    .button-accent {
+  @apply text-center p-3 border shadow-sm
+         border-[var(--button-accent-border)]
+         bg-[var(--button-accent)]
+         hover:bg-[var(--button-accent-hover)]
+         h-full w-full rounded-lg
+         text-[var(--foreground)];
+}
+
 }
 
 body {

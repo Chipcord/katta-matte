@@ -72,9 +72,16 @@ export default async function HomePage() {
           [&_.katex-display]:rounded-lg
           [&_.katex-display]:bg-[var(--code-background)]
           [&_.katex-display]:p-6
+
+          [&_.button]:text-[var(--foreground)]
+          [&_.button]:no-underline
+
+          [&_.button-accent]:text-[var(--foreground)]
+          [&_.button-accent]:no-underline
         "
       >
         {content}
+        <div className="h-[10vw]"></div>
       </main>
     </div>
   );

@@ -156,7 +156,7 @@ function ExerciseQuiz({
       </h2>
 
       <p
-        className="mt-4 text-[var(--foreground)]"
+        className="mt-4 text-[var(--foreground)] [&_.katex]:text-[var(--code-foreground)]"
         dangerouslySetInnerHTML={{
           __html: renderMath(exercise.question),
         }}
@@ -180,7 +180,7 @@ function ExerciseQuiz({
                 rounded-md
                 border
                 border-[var(--border)]
-                text-[var(--foreground)]
+                text-[var(--code-foreground)]
 
                 ${
                   !isAnswered

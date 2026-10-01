@@ -112,7 +112,7 @@ export default async function LearnPage({
           prose-li:text-[var(--foreground)]
 
           /* Math */
-          [&_.katex]:text-[var(--foreground)]
+          [&_.katex]:text-[var(--code-foreground)]
           [&_.katex-display]:my-6
           [&_.katex-display]:rounded-lg
           [&_.katex-display]:bg-[var(--code-background)]
@@ -125,6 +125,7 @@ export default async function LearnPage({
         <Exercises exercises={exercises} />
       )}
       <TopicNavigation currentPath={currentPath} />
+      <div className="h-[10vw]"></div>
     </>
   );
 }
