@@ -90,16 +90,6 @@ export default async function HomePage() {
         "
       >
         {content}
-        <Graph
-          data={[
-            {
-              x: [0, 1, 2, 3, 4],
-              y: [0, 1, 2, 3, 4],
-              type: "scatter",
-              mode: "lines+markers",
-            },
-          ]}
-        />
 
         <div className="h-[10vw]"></div>
       </main>

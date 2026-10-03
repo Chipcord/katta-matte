@@ -152,7 +152,7 @@ function ExerciseQuiz({
       "
     >
       <h2 className="text-2xl font-bold text-[var(--foreground)]">
-        (KI GENERERT) Oppgave {exerciseIndex + 1} av 5
+        Oppgave {exerciseIndex + 1} av 5 <span className="opacity-20 italic text-lg font-medium">* oppgavene er delvis KI genererte</span>
       </h2>
 
       <p
