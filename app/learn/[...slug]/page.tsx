@@ -3,9 +3,13 @@ import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import TopicNavigation from "@/app/components/TopicNavigation";
 import remarkMath from "remark-math";
+import remarkMdx from "remark-mdx";
 import rehypeKatex from "rehype-katex";
+import Link from "next/link";
 
 import { Exercises } from "@/app/components/Exercises";
+
+import Graph from "@/app/components/math/Graph";
 
 
 export default async function LearnPage({
@@ -26,9 +30,16 @@ export default async function LearnPage({
 
   const { content } = await compileMDX({
       source,
+      components: {
+        Link,
+        Graph,
+      },
       options: {
         mdxOptions: {
-          remarkPlugins: [remarkMath],
+          remarkPlugins: [
+            remarkMdx,
+            remarkMath,
+          ],
           rehypePlugins: [rehypeKatex],
         },
       },
@@ -124,6 +135,7 @@ export default async function LearnPage({
       {exercises.length > 0 && (
         <Exercises exercises={exercises} />
       )}
+
       <TopicNavigation currentPath={currentPath} />
       <div className="h-[10vw]"></div>
     </>

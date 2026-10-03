@@ -2,8 +2,11 @@ import fs from "fs/promises";
 import path from "path";
 import { compileMDX } from "next-mdx-remote/rsc";
 import remarkMath from "remark-math";
+import remarkMdx from "remark-mdx";
 import rehypeKatex from "rehype-katex";
 import Link from "next/link";
+import Graph from "@/app/components/math/Graph";
+
 
 export default async function HomePage() {
   const filePath = path.join(
@@ -16,10 +19,16 @@ export default async function HomePage() {
 
   const { content } = await compileMDX({
     source,
-    components: { Link },
+    components: {
+      Link,
+      Graph,
+    },
     options: {
       mdxOptions: {
-        remarkPlugins: [remarkMath],
+        remarkPlugins: [
+          remarkMdx,
+          remarkMath,
+        ],
         rehypePlugins: [rehypeKatex],
       },
     },
@@ -81,6 +90,17 @@ export default async function HomePage() {
         "
       >
         {content}
+        <Graph
+          data={[
+            {
+              x: [0, 1, 2, 3, 4],
+              y: [0, 1, 2, 3, 4],
+              type: "scatter",
+              mode: "lines+markers",
+            },
+          ]}
+        />
+
         <div className="h-[10vw]"></div>
       </main>
     </div>
