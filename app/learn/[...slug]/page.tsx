@@ -85,15 +85,15 @@ export default async function LearnPage({
           /* Headings */
           prose-headings:text-[var(--foreground)]
 
-          prose-h1:border-b
+          prose-h1:border-b-[length:var(--content-border-width)]
           prose-h1:border-[var(--border)]
           prose-h1:pb-3
 
-          prose-h2:border-b
+          prose-h2:border-b-[length:var(--content-border-width)]
           prose-h2:border-[var(--border)]
           prose-h2:pb-2
 
-          prose-h3:border-b
+          prose-h3:border-b-[length:var(--content-border-width)]
           prose-h3:border-[var(--border)]
           prose-h3:pb-2
 
@@ -117,6 +117,7 @@ export default async function LearnPage({
           [&_:is(blockquote,p)::after]:content-['']
 
           /* Borders */
+          prose-hr:border-[length:var(--content-border-width)]
           prose-hr:border-[var(--border)]
 
           /* Lists */

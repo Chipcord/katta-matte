@@ -7,6 +7,8 @@
   --background: #ffffff;
   --foreground: #1F2328;
   --border: #d4d9df;
+  --border-width: 1px; /* To remove all ui borders, set to 0px */
+  --content-border-width: 1px; /* To remove all text dividers, set to 0px */
   --link: #0969DA;
   --foreground-accent: #1F2328; /* Math equations */
 
@@ -57,6 +59,8 @@
       --background: #0D1117;
       --foreground: #F0F6FC;
       --border: #3d444c;
+      --border-width: 1px; /* To remova all ui borders, set to 0px */
+      --content-border-width: 1px; /* To remove all text dividers, set to 0px */
       --link: #4493F8;
       --foreground-accent: #F0F6FC; /* Math equations */
 
@@ -96,25 +100,25 @@
 }
 
 @layer components {
-
     .button {
-    @apply text-center p-3 border shadow-sm
-           border-[var(--border)]
-           bg-[var(--button)]
-           hover:bg-[var(--button-hover)]
-           h-full w-full rounded-lg
-           text-[var(--button-foreground)];
-  }
-
+      @apply text-center p-3
+             border-[length:var(--border-width)]
+             border-[var(--border)]
+             shadow-sm
+             bg-[var(--button)]
+             hover:bg-[var(--button-hover)]
+             h-full w-full rounded-lg
+             text-[var(--button-foreground)];
+    }
     .block-button {
-    @apply text-center p-3 border
-           border-[var(--block-border)]
-           bg-[var(--block-button)]
-           hover:bg-[var(--block-button-hover)]
-           h-full w-full rounded-lg
-           text-[var(--block-button-foreground)];
-}
-
+      @apply text-center p-3
+             border-[length:var(--border-width)]
+             border-[var(--block-border)]
+             bg-[var(--block-button)]
+             hover:bg-[var(--block-button-hover)]
+             h-full w-full rounded-lg
+             text-[var(--block-button-foreground)];
+    }
 }
 
 body {

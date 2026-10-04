@@ -30,7 +30,7 @@ export default function Sidebar() {
     <nav
       className="
         text-[var(--sidebar-foreground)]
-        border-r
+        border-r-[length:var(--border-width)]
         border-[var(--border)]
         pt-5
         h-screen
@@ -48,7 +48,7 @@ export default function Sidebar() {
         return (
           <SidebarCourse key={course} course={course}>
             <div>
-              <h2 className="text-2xl font-bold p-2 pl-5 mb-1 border-b border-[var(--border)]">
+              <h2 className="text-2xl font-bold p-2 pl-5 mb-1 border-b-[length:var(--border-width)] border-[var(--border)]">
                 {course + " Matte"}
               </h2>
 

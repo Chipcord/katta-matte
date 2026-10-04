@@ -6,7 +6,7 @@ export default function TopNavigation() {
   return (
     <nav className="w-full h-16 static">
 
-      <div className="fixed z-10 bg-[var(--navigation-bar-background)] text-[var(--navigation-bar-foreground)] border-b border-[var(--border)] w-full h-16 p-5 flex items-center justify-between">
+      <div className="fixed z-10 bg-[var(--navigation-bar-background)] text-[var(--navigation-bar-foreground)] border-b-[length:var(--border-width)] border-[var(--border)] w-full h-16 p-5 flex items-center justify-between">
         <Link href={"../../../"}>KattaMatte</Link>
         <Link href={"https://chip-studios.vercel.app/"}>© hm-1ste 2026</Link>
       </div>
