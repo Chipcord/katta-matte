@@ -43,11 +43,8 @@ function ExerciseQuiz({
   exercises: Exercise[];
 }) {
   const [quizExercises, setQuizExercises] = useState<Exercise[]>([]);
-
   const [exerciseIndex, setExerciseIndex] = useState(0);
-  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(
-    null
-  );
+  const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [score, setScore] = useState(0);
   const [finished, setFinished] = useState(false);
 
@@ -107,32 +104,21 @@ function ExerciseQuiz({
           lg:mx-10
           p-5
           rounded-lg
-          bg-[var(--code-background)]
+          bg-[var(--block-background)]
         "
       >
-        <h2 className="text-2xl font-bold text-[var(--foreground)]">
+        <h2 className="text-2xl font-bold text-[var(--block-foreground)]">
           Resultat
         </h2>
 
-        <p className="mt-4 text-[var(--foreground)]">
+        <p className="mt-4 text-[var(--block-foreground)]">
           Du fikk {score} av 5 riktige.
         </p>
 
         <button
           type="button"
           onClick={handleRetry}
-          className="
-            cursor-pointer
-            mt-4
-            rounded-md
-            bg-[var(--button)]
-            border
-            border-[var(--border)]
-            px-4
-            py-2
-            text-[var(--foreground)]
-            hover:bg-[var(--button-hover)]
-          "
+          className="block-button mt-4 cursor-pointer"
         >
           Prøv igjen
         </button>
@@ -148,15 +134,22 @@ function ExerciseQuiz({
         lg:mx-10
         p-5
         rounded-lg
-        bg-[var(--code-background)]
+        bg-[var(--block-background)]
       "
     >
-      <h2 className="text-2xl font-bold text-[var(--foreground)]">
-        Oppgave {exerciseIndex + 1} av 5 <span className="opacity-20 italic text-lg font-medium">* oppgavene er delvis KI genererte</span>
+      <h2 className="text-2xl font-bold text-[var(--block-foreground)]">
+        Oppgave {exerciseIndex + 1} av 5{" "}
+        <span className="opacity-20 italic text-lg font-medium">
+          * oppgavene er delvis KI genererte
+        </span>
       </h2>
 
       <p
-        className="mt-4 text-[var(--foreground)] [&_.katex]:text-[var(--code-foreground)]"
+        className="
+          mt-4
+          text-[var(--block-foreground)]
+          [&_.katex]:text-[var(--block-foreground-accent)]
+        "
         dangerouslySetInnerHTML={{
           __html: renderMath(exercise.question),
         }}
@@ -174,23 +167,16 @@ function ExerciseQuiz({
               disabled={isAnswered}
               onClick={() => handleAnswer(index)}
               className={`
+                block-button
                 cursor-pointer
-                p-3
                 text-left
-                rounded-md
-                border
-                border-[var(--border)]
-                text-[var(--code-foreground)]
-
-                ${
-                  !isAnswered
-                    ? "bg-[var(--button)] hover:bg-[var(--button-hover)]"
-                    : ""
-                }
 
                 ${
                   isAnswered && isCorrectAnswer
-                    ? "bg-green-100 dark:bg-green-900/30"
+                    ? `
+                      bg-[var(--block-button-right)]
+                      border-[var(--block-border-right)]
+                    `
                     : ""
                 }
 
@@ -198,9 +184,14 @@ function ExerciseQuiz({
                   isAnswered &&
                   isSelected &&
                   !isCorrectAnswer
-                    ? "bg-red-100 dark:bg-red-900/30"
+                    ? `
+                      bg-[var(--block-button-wrong)]
+                      border-[var(--block-border-wrong)]
+                    `
                     : ""
                 }
+
+                [&_.katex]:text-[var(--block-foreground-accent)]
               `}
               dangerouslySetInnerHTML={{
                 __html: katex.renderToString(option, {
@@ -220,8 +211,8 @@ function ExerciseQuiz({
               font-medium
               ${
                 isCorrect
-                  ? "text-green-600 dark:text-green-400"
-                  : "text-red-600 dark:text-red-400"
+                  ? "text-[var(--block-right)]"
+                  : "text-[var(--block-wrong)]"
               }
             `}
           >
@@ -231,18 +222,7 @@ function ExerciseQuiz({
           <button
             type="button"
             onClick={handleNext}
-            className="
-              cursor-pointer
-              mt-4
-              rounded-md
-              bg-[var(--button)]
-              border
-              border-[var(--border)]
-              px-4
-              py-2
-              text-[var(--foreground)]
-              hover:bg-[var(--button-hover)]
-            "
+            className="block-button mt-4 cursor-pointer"
           >
             {exerciseIndex === 4 ? "Se resultat" : "Neste oppgave"}
           </button>

@@ -25,8 +25,8 @@ export default function SidebarLink({
         ml-3
         ${
           isSelected
-            ? "border-[var(--link)] bg-[var(--selected)] rounded-l-xs"
-            : "border-transparent hover:bg-[var(--hover)]"
+            ? "border-[var(--sidebar-selected-accent)] bg-[var(--sidebar-selected)] rounded-l-xs"
+            : "border-transparent hover:bg-[var(--sidebar-hover)]"
         }
       `}
     >

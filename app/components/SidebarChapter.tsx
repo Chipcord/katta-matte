@@ -34,7 +34,7 @@ export default function SidebarChapter({
           px-2
           py-1
           mb-1
-          hover:bg-[var(--hover)]
+          hover:bg-[var(--sidebar-hover)]
           rounded-md
         "
       >
@@ -46,7 +46,7 @@ export default function SidebarChapter({
             mr-2
             border-r-2
             border-b-2
-            border-[var(--accent-foreground)]
+            border-[var(--sidebar-foreground)]
             rotate-[-45deg]
             rounded-[1px]
             group-open:rotate-45

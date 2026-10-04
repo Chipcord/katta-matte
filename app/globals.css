@@ -3,28 +3,45 @@
 @import "katex/dist/katex.min.css";
 
 :root {
+  /* General */
   --background: #ffffff;
   --foreground: #1F2328;
-
-  --muted: #f1f4f5;
   --border: #d4d9df;
+  --link: #0969DA;
+  --foreground-accent: #1F2328; /* Math equations */
 
-  --hover: #f1f4f5;
-  --selected: #eceff0;
+  /* Navigation Bar */
+  --navigation-bar-background: #f1f4f5;
+  --navigation-bar-foreground: #1F2328;
 
+  /* Side Bar */
+  --sidebar-background: #ffffff;
+  --sidebar-foreground: #1F2328;
+  --sidebar-hover: #f1f4f5;
+  --sidebar-selected: #eceff0;
+  --sidebar-selected-accent: #0969DA;
+
+  /* Blocks */
+  --block-background: #F6F8FA;
+  --block-foreground: #1F2328;
+  --block-foreground-accent: #1F2328; /* Math equations in blocks */
+  --block-border: #d4d9df;
+  --block-right: #00a63e;
+  --block-wrong: #e7000b;
+
+  /* Block Button */
+  --block-button: #f7f8fa;
+  --block-button-hover: #eef2f5;
+  --block-button-foreground: #1F2328;
+  --block-button-right: #dcfce7;
+  --block-button-wrong: #ffe2e2;
+  --block-border-right: #00a63e;
+  --block-border-wrong: #e7000b;
+
+  /* General Button */
   --button: #f7f8fa;
   --button-hover: #eef2f5;
-
-  --button-accent: #29903B;
-  --button-accent-hover: #46954A;
-  --button-accent-border: #57AB5A;
-
-  --code-background: #F6F8FA;
-  --code-foreground: #1F2328;
-
-  --accent-foreground: #59636E;
-
-  --link: #0969DA;
+  --button-foreground: #1F2328;
 }
 
 @theme inline {
@@ -36,29 +53,46 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-       --background: #0D1117;
-       --foreground: #F0F6FC;
+      /* General */
+      --background: #0D1117;
+      --foreground: #F0F6FC;
+      --border: #3d444c;
+      --link: #4493F8;
+      --foreground-accent: #F0F6FC; /* Math equations */
 
-       --muted: #010409;
-       --border: #3d444c;
+      /* Navigation Bar */
+      --navigation-bar-background: #010409;
+      --navigation-bar-foreground: #F0F6FC;
 
-       --hover: #1E232A;
-       --selected: #1E232A;
+      /* Side Bar */
+      --sidebar-background: #0D1117;
+      --sidebar-foreground: #F0F6FC;
+      --sidebar-hover: #1E232A;
+      --sidebar-selected: #1E232A;
+      --sidebar-selected-accent: #4493F8;
 
-       --button: #212830;
-       --button-hover: #282c35;
+      /* Blocks */
+      --block-background: #151B23;
+      --block-foreground: #F0F6FC;
+      --block-foreground-accent: #F0F6FC; /* Math equations in blocks */
+      --block-border: #3d444c;
+      --block-right: #05df72;
+      --block-wrong: #ff6467;
 
-       --button-accent: #29903B;
-       --button-accent-hover: #46954A;
-       --button-accent-border: #57AB5A;
+      /* Block Button */
+      --block-button: #212830;
+      --block-button-hover: #282c35;
+      --block-button-foreground: #F0F6FC;
+      --block-button-right: #122b25;
+      --block-button-wrong: #351920;
+      --block-border-right: #05df72;
+      --block-border-wrong: #ff6467;
 
-       --code-background: #151B23;
-       --code-foreground: #F0F6FC;
-
-       --accent-foreground: #9198A1;
-
-       --link: #4493F8;
-      }
+      /* General Button */
+      --button: #212830;
+      --button-hover: #282c35;
+      --button-foreground: #F0F6FC;
+    }
 }
 
 @layer components {
@@ -69,16 +103,16 @@
            bg-[var(--button)]
            hover:bg-[var(--button-hover)]
            h-full w-full rounded-lg
-           text-[var(--foreground)];
+           text-[var(--button-foreground)];
   }
 
-    .button-accent {
-  @apply text-center p-3 border shadow-sm
-         border-[var(--button-accent-border)]
-         bg-[var(--button-accent)]
-         hover:bg-[var(--button-accent-hover)]
-         h-full w-full rounded-lg
-         text-[var(--foreground)];
+    .block-button {
+    @apply text-center p-3 border
+           border-[var(--block-border)]
+           bg-[var(--block-button)]
+           hover:bg-[var(--block-button-hover)]
+           h-full w-full rounded-lg
+           text-[var(--block-button-foreground)];
 }
 
 }

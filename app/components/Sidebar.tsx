@@ -29,7 +29,7 @@ export default function Sidebar() {
   return (
     <nav
       className="
-        text-[var(--foreground)]
+        text-[var(--sidebar-foreground)]
         border-r
         border-[var(--border)]
         pt-5

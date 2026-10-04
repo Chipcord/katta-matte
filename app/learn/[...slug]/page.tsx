@@ -104,11 +104,11 @@ export default async function LearnPage({
           prose-a:text-[var(--link)]
 
           /* Code */
-          prose-code:text-[var(--code-foreground)]
-          prose-code:bg-[var(--code-background)]
+          prose-code:text-[var(--block-foreground)]
+          prose-code:bg-[var(--block-background)]
 
-          prose-pre:bg-[var(--code-background)]
-          prose-pre:text-[var(--code-foreground)]
+          prose-pre:bg-[var(--block-background)]
+          prose-pre:text-[var(--block-foreground)]
 
           /* Blockquotes */
           prose-blockquote:text-[var(--muted)]
@@ -123,10 +123,10 @@ export default async function LearnPage({
           prose-li:text-[var(--foreground)]
 
           /* Math */
-          [&_.katex]:text-[var(--code-foreground)]
+          [&_.katex]:text-[var(--foreground-accent)]
           [&_.katex-display]:my-6
           [&_.katex-display]:rounded-lg
-          [&_.katex-display]:bg-[var(--code-background)]
+          [&_.katex-display]:bg-[var(--block-background)]
           [&_.katex-display]:p-6
         "
       >
