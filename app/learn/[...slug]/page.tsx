@@ -128,6 +128,7 @@ export default async function LearnPage({
           [&_.katex-display]:rounded-lg
           [&_.katex-display]:bg-[var(--block-background)]
           [&_.katex-display]:p-6
+          [&_.katex-display_.katex]:text-[var(--block-foreground-accent)]
         "
       >
         {content}
