@@ -10,6 +10,7 @@ import Link from "next/link";
 import { Exercises } from "@/app/components/Exercises";
 
 import Graph from "@/app/components/math/Graph";
+import SignChart from "@/app/components/math/SignChart";
 
 
 export default async function LearnPage({
@@ -33,6 +34,7 @@ export default async function LearnPage({
       components: {
         Link,
         Graph,
+        SignChart,
       },
       options: {
         mdxOptions: {
