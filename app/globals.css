@@ -102,22 +102,22 @@
 @layer components {
     .button {
       @apply text-center p-3
-             border-[length:var(--border-width)]
-             border-[var(--border)]
+             border-(length:--border-width)
+             border-(--border)
              shadow-sm
-             bg-[var(--button)]
-             hover:bg-[var(--button-hover)]
+             bg-(--button)
+             hover:bg-(--button-hover)
              h-full w-full rounded-lg
-             text-[var(--button-foreground)];
+             text-(--button-foreground)
     }
     .block-button {
       @apply text-center p-3
-             border-[length:var(--border-width)]
-             border-[var(--block-border)]
-             bg-[var(--block-button)]
-             hover:bg-[var(--block-button-hover)]
+             border-(length:--border-width)
+             border-(--block-border)
+             bg-(--block-button)
+             hover:bg-(--block-button-hover)
              h-full w-full rounded-lg
-             text-[var(--block-button-foreground)];
+             text-(--block-button-foreground)
     }
 }
 

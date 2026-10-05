@@ -249,7 +249,7 @@ export default function SignChart({
 
   if (expressionList.length === 0) {
     return (
-      <div className="my-4 rounded-lg border border-[var(--block-border-wrong)] bg-[var(--block-button-wrong)] p-4 text-sm text-[var(--block-border-wrong)]">
+      <div className="my-4 rounded-lg border border-(--block-border-wrong) bg-(--block-button-wrong) p-4 text-sm text-(--block-border-wrong)">
         SignChart requires at least one expression.
       </div>
     );
@@ -257,7 +257,7 @@ export default function SignChart({
 
   return (
     <div className="my-5 overflow-x-auto">
-      <div className="min-w-[700px] rounded-lg bg-[var(--block-background)] p-6 shadow-sm">
+      <div className="min-w-175 rounded-lg bg-(--block-background) p-6 shadow-sm">
         <div className="space-y-4">
 
           <div className="grid grid-cols-[180px_1fr] gap-4">
@@ -284,7 +284,7 @@ export default function SignChart({
                   >
                     <div
                       className={[
-                        "h-4 w-4 rounded-full bg-[var(--block-background)]",
+                        "h-4 w-4 rounded-full bg-(--block-background)",
                         point.undefined
                           ? "border-2 border-dashed border-foreground"
                           : "border-2 border-foreground",
@@ -419,7 +419,7 @@ function SignLine({
           return (
             <span
               key={point.value}
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--block-background)] px-1 text-sm font-medium"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-(--block-background) px-1 text-sm font-medium"
               style={{
                 left: `${position}%`,
               }}
@@ -433,7 +433,7 @@ function SignLine({
           return (
             <span
               key={point.value}
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--block-background)] px-1 text-sm font-medium"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-(--block-background) px-1 text-sm font-medium"
               style={{
                 left: `${position}%`,
               }}
@@ -527,7 +527,7 @@ function XSignLine({
           return (
             <span
               key={point.value}
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--block-background)] px-1 text-sm font-medium"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-(--block-background) px-1 text-sm font-medium"
               style={{
                 left: `${position}%`,
               }}
@@ -541,7 +541,7 @@ function XSignLine({
           return (
             <span
               key={point.value}
-              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-[var(--block-background)] px-1 text-sm font-medium"
+              className="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 bg-(--block-background) px-1 text-sm font-medium"
               style={{
                 left: `${position}%`,
               }}

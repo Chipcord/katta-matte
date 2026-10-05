@@ -85,53 +85,53 @@ export default async function LearnPage({
           p-10
 
           /* Headings */
-          prose-headings:text-[var(--foreground)]
+          prose-headings:text-foreground
 
-          prose-h1:border-b-[length:var(--content-border-width)]
-          prose-h1:border-[var(--border)]
+          prose-h1:border-b-(length:--content-border-width)
+          prose-h1:border-(--border)
           prose-h1:pb-3
 
-          prose-h2:border-b-[length:var(--content-border-width)]
-          prose-h2:border-[var(--border)]
+          prose-h2:border-b-(length:--content-border-width)
+          prose-h2:border-(--border)
           prose-h2:pb-2
 
-          prose-h3:border-b-[length:var(--content-border-width)]
-          prose-h3:border-[var(--border)]
+          prose-h3:border-b-(length:--content-border-width)
+          prose-h3:border-(--border)
           prose-h3:pb-2
 
           /* Body */
-          prose-p:text-[var(--foreground)]
+          prose-p:text-foreground
 
           /* Links */
-          prose-a:text-[var(--link)]
+          prose-a:text-(--link)
 
           /* Code */
-          prose-code:text-[var(--block-foreground)]
-          prose-code:bg-[var(--block-background)]
+          prose-code:text-(--block-foreground)
+          prose-code:bg-(--block-background)
 
-          prose-pre:bg-[var(--block-background)]
-          prose-pre:text-[var(--block-foreground)]
+          prose-pre:bg-(--block-background)
+          prose-pre:text-(--block-foreground)
 
           /* Blockquotes */
-          prose-blockquote:text-[var(--muted)]
+          prose-blockquote:text-(--muted)
           prose-blockquote:not-italic
           [&_:is(blockquote,p)::before]:content-['']
           [&_:is(blockquote,p)::after]:content-['']
 
           /* Borders */
-          prose-hr:border-[length:var(--content-border-width)]
-          prose-hr:border-[var(--border)]
+          prose-hr:border-(length:--content-border-width)
+          prose-hr:border-(--border)
 
           /* Lists */
-          prose-li:text-[var(--foreground)]
+          prose-li:text-foreground
 
           /* Math */
-          [&_.katex]:text-[var(--foreground-accent)]
+          [&_.katex]:text-(--foreground-accent)
           [&_.katex-display]:my-6
           [&_.katex-display]:rounded-lg
-          [&_.katex-display]:bg-[var(--block-background)]
+          [&_.katex-display]:bg-(--block-background)
           [&_.katex-display]:p-6
-          [&_.katex-display_.katex]:text-[var(--block-foreground-accent)]
+          [&_.katex-display_.katex]:text-(--block-foreground-accent)
         "
       >
         {content}
