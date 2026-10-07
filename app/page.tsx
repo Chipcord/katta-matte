@@ -42,52 +42,62 @@ export default async function HomePage() {
           max-w-5xl
           p-10
 
-          prose-headings:text-[var(--foreground)]
+          /* Headings */
+          prose-headings:text-foreground
 
-          prose-h1:border-b-[length:var(--content-border-width)]
-          prose-h1:border-[var(--border)]
+          prose-h1:border-b-(length:--content-border-width)
+          prose-h1:border-(--border)
           prose-h1:pb-3
 
-          prose-h2:border-b-[length:var(--content-border-width)]
-          prose-h2:border-[var(--border)]
+          prose-h2:border-b-(length:--content-border-width)
+          prose-h2:border-(--border)
           prose-h2:pb-2
 
-          prose-h3:border-b-[length:var(--content-border-width)]
-          prose-h3:border-[var(--border)]
+          prose-h3:border-b-(length:--content-border-width)
+          prose-h3:border-(--border)
           prose-h3:pb-2
 
-          prose-p:text-[var(--foreground)]
+          /* Body */
+          prose-p:text-foreground
+          prose-strong:text-foreground
 
-          prose-a:text-[var(--link)]
+          /* Links */
+          prose-a:text-(--link)
 
-          prose-code:text-[var(--code-foreground)]
-          prose-code:bg-[var(--code-background)]
+          /* Code */
+          prose-code:text-(--block-foreground)
+          prose-code:bg-(--block-background)
 
-          prose-pre:bg-[var(--code-background)]
-          prose-pre:text-[var(--code-foreground)]
+          prose-pre:bg-(--block-background)
+          prose-pre:text-(--block-foreground)
           prose-pre:whitespace-pre-wrap
           prose-pre:wrap-break-word
 
-          prose-blockquote:text-[var(--muted)]
+          /* Blockquotes */
+          prose-blockquote:text-(--muted)
           prose-blockquote:not-italic
           [&_:is(blockquote,p)::before]:content-['']
           [&_:is(blockquote,p)::after]:content-['']
 
-          prose-hr:border-[var(--border)]
+          /* Borders */
+          prose-hr:border-(length:--content-border-width)
+          prose-hr:border-(--border)
 
-          prose-li:text-[var(--foreground)]
-          prose-strong:text-foreground
+          /* Lists */
+          prose-li:text-foreground
 
-          [&_.katex]:text-[var(--foreground)]
+          /* Math */
+          [&_.katex]:text-(--foreground-accent)
           [&_.katex-display]:my-6
           [&_.katex-display]:rounded-lg
-          [&_.katex-display]:bg-[var(--code-background)]
+          [&_.katex-display]:bg-(--block-background)
           [&_.katex-display]:p-6
+          [&_.katex-display_.katex]:text-(--block-foreground-accent)
 
-          [&_.button]:text-[var(--foreground)]
+          /* Buttons */
+          [&_.button]:text-foreground
           [&_.button]:no-underline
-
-          [&_.button-accent]:text-[var(--foreground)]
+          [&_.button-accent]:text-foreground
           [&_.button-accent]:no-underline
         "
       >

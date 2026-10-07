@@ -137,6 +137,12 @@ export default async function LearnPage({
           [&_.katex-display]:bg-(--block-background)
           [&_.katex-display]:p-6
           [&_.katex-display_.katex]:text-(--block-foreground-accent)
+
+          /* Buttons */
+          [&_.button]:text-foreground
+          [&_.button]:no-underline
+          [&_.button-accent]:text-foreground
+          [&_.button-accent]:no-underline
         "
       >
         {content}
