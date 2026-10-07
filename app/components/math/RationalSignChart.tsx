@@ -1,6 +1,10 @@
 "use client";
 
-import { evaluate, parse } from "mathjs";
+import {
+  evaluate,
+  parse,
+  OperatorNode,
+} from "mathjs";
 import { InlineMath } from "react-katex";
 import { useMemo } from "react";
 import "katex/dist/katex.min.css";
@@ -63,7 +67,7 @@ function findDenominators(
 
     node.traverse((child) => {
       if (
-        child.isOperatorNode &&
+        child instanceof OperatorNode &&
         child.op === "/" &&
         child.args.length === 2
       ) {
@@ -218,7 +222,7 @@ function findCriticalPoints(
   )) {
     points.push({
       value: root,
-
+      zero: !isDenominator,
       undefined: isDenominator,
     });
   }
