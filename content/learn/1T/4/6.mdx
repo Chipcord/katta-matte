@@ -1,3 +1,41 @@
 # 4.6 Faktorisering av polynomer
 
 For å faktorisere et tredjegradsuttrykk, må vi først finne en faktor som går igjen i utrykket. Når vi har gjort dette, kan vi bruke polynomdivisjon for å få et andregradsutrykk som vi kan faktorisere videre.
+
+> Husker du at når vi får $r=0$ ved polynomdivisjon, vet vi at $Q$ er en faktor i $P$?
+
+Det er ikke noe annet vi kan gjøre enn å gjette på hvilken faktor som går igjen i utrykket hvis vi ikke har noe mer informasjon. I oppgavene pleier
+man derfor å gi et hint.
+
+_eks. 1_
+
+
+Vi vil faktorisere $P(x) = x^3 - 2x^2 -x + 2$. I oppgaven kan det da stå "vis at $x + 1$ er en faktor i $P(x)$". Da må vi bruke det vi lærte i forrige delkapittel hvor vi ser om $P(x_0)=0$:
+
+$$
+P(-1) = (-1)^3 - 2(-1)^2 - (-1) + 2 = 0
+$$
+
+Da vet vi at $x + 1$ er en faktor i $P(x)$. For å finne de andre faktorene, bruker vi polynomdivisjon. Da vil vi få polynomet $P(x)$ uten $x + 1$ som faktor.
+
+Så vi gjør
+$$
+x^3-2x^2-x+2 \div (x + 1) = ?
+$$
+
+Svaret blir
+$$
+= x^2 - 3x + 2
+$$
+
+Nå har vi fått et andregradsutrykk, som vi kan faktorisere videre med metodene vi har lært tidligere. I dette tilfellet kan vi bruke heltallsmetoden:
+
+$$
+= (x - 1)(x - 2)
+$$
+
+Nå vet vi alle faktorene i $P(x)$, og vi setter dem sammen:
+
+$$
+P(x) = (x + 1)(x - 1)(x - 2)
+$$

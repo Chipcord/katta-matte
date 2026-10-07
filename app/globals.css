@@ -59,7 +59,7 @@
       --background: #0D1117;
       --foreground: #F0F6FC;
       --border: #3d444c;
-      --border-width: 1px; /* To remova all ui borders, set to 0px */
+      --border-width: 1px; /* To remove all ui borders, set to 0px */
       --content-border-width: 1px; /* To remove all text dividers, set to 0px */
       --link: #4493F8;
       --foreground-accent: #F0F6FC; /* Math equations */

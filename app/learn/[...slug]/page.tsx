@@ -11,6 +11,7 @@ import { Exercises } from "@/app/components/Exercises";
 
 import Graph from "@/app/components/math/Graph";
 import SignChart from "@/app/components/math/SignChart";
+import RationalSignChart from "@/app/components/math/RationalSignChart";
 
 
 export default async function LearnPage({
@@ -35,6 +36,7 @@ export default async function LearnPage({
         Link,
         Graph,
         SignChart,
+        RationalSignChart,
       },
       options: {
         mdxOptions: {
@@ -101,6 +103,7 @@ export default async function LearnPage({
 
           /* Body */
           prose-p:text-foreground
+          prose-strong:text-foreground
 
           /* Links */
           prose-a:text-(--link)
@@ -111,6 +114,8 @@ export default async function LearnPage({
 
           prose-pre:bg-(--block-background)
           prose-pre:text-(--block-foreground)
+          prose-pre:whitespace-pre-wrap
+          prose-pre:wrap-break-word
 
           /* Blockquotes */
           prose-blockquote:text-(--muted)

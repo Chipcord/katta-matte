@@ -65,6 +65,8 @@ export default async function HomePage() {
 
           prose-pre:bg-[var(--code-background)]
           prose-pre:text-[var(--code-foreground)]
+          prose-pre:whitespace-pre-wrap
+          prose-pre:wrap-break-word
 
           prose-blockquote:text-[var(--muted)]
           prose-blockquote:not-italic
@@ -74,7 +76,7 @@ export default async function HomePage() {
           prose-hr:border-[var(--border)]
 
           prose-li:text-[var(--foreground)]
-          prose-strong:text-[var(--foreground)]
+          prose-strong:text-foreground
 
           [&_.katex]:text-[var(--foreground)]
           [&_.katex-display]:my-6

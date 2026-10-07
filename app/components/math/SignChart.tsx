@@ -144,11 +144,11 @@ function findCriticalPoints(expression: string): CriticalPoint[] {
 function getSign(
   expression: string,
   x: number
-): "+" | "-" | "0" | "∅" {
+): "+" | "-" | "0" | "&gt;&lt;" {
   const value = evaluateAt(expression, x);
 
   if (value === null) {
-    return "∅";
+    return "&gt;&lt;";
   }
 
   if (Math.abs(value) < EPSILON) {
@@ -257,11 +257,11 @@ export default function SignChart({
 
   return (
     <div className="my-5 overflow-x-auto">
-      <div className="min-w-175 rounded-lg bg-(--block-background) p-6 shadow-sm">
-        <div className="space-y-4">
+      <div className="min-w-175 rounded-lg bg-(--block-background) p-5 shadow-sm">
+        <div className="space-y-2">
 
-          <div className="grid grid-cols-[180px_1fr] gap-4">
-            <div className="font-medium">
+          <div className="grid grid-cols-[240px_1fr] gap-4">
+            <div className="font-medium py-4">
               <InlineMath math="x" />
             </div>
 
@@ -303,7 +303,7 @@ export default function SignChart({
           {expressionList.map((expression) => (
             <div
               key={expression}
-              className="grid grid-cols-[180px_1fr] gap-4"
+              className="grid grid-cols-[240px_1fr] gap-4"
             >
               <div className="flex items-center">
                 <InlineMath
@@ -319,12 +319,16 @@ export default function SignChart({
             </div>
           ))}
 
-          <div className="grid grid-cols-[180px_1fr] gap-4 border-t pt-4">
+          <div className="grid grid-cols-[240px_1fr] gap-4 border-t pt-4">
             <div className="flex items-center">
-              <InlineMath math="x" />
+              <InlineMath
+                math={expressionList
+                  .map((expression) => expressionToLatex(expression))
+                  .join(" \\cdot ")}
+              />
             </div>
 
-            <XSignLine
+            <ProductSignLine
               expressions={expressionList}
               points={chart.points}
               intervals={chart.intervals}
@@ -332,7 +336,7 @@ export default function SignChart({
           </div>
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-5 border-t pt-4 text-sm text-muted-foreground">
+        <div className="mt-4 flex flex-wrap gap-5 border-t pt-4 text-sm text-muted-foreground">
           <span className="flex items-center gap-2">
             <span className="inline-block w-8 border-t-2 border-foreground" />
             positiv
@@ -349,8 +353,8 @@ export default function SignChart({
           </span>
 
           <span>
-            <strong className="text-foreground">∅</strong>{" "}
-            udefinert
+            <strong className="text-foreground">&gt;&lt;</strong>{" "}
+            bruddpunkt
           </span>
         </div>
       </div>
@@ -429,7 +433,7 @@ function SignLine({
           );
         }
 
-        if (sign === "∅") {
+        if (sign === "&gt;&lt;") {
           return (
             <span
               key={point.value}
@@ -438,7 +442,7 @@ function SignLine({
                 left: `${position}%`,
               }}
             >
-              ∅
+              &gt;&lt;
             </span>
           );
         }
@@ -449,7 +453,7 @@ function SignLine({
   );
 }
 
-function XSignLine({
+function ProductSignLine({
   expressions,
   points,
   intervals,
@@ -465,10 +469,10 @@ function XSignLine({
           getSign(expression, interval.testPoint)
         );
 
-        let combinedSign: "+" | "-" | "0" | "∅" = "+";
+        let combinedSign: "+" | "-" | "0" | "&gt;&lt;" = "+";
 
-        if (signs.some((sign) => sign === "∅")) {
-          combinedSign = "∅";
+        if (signs.some((sign) => sign === "&gt;&lt;")) {
+          combinedSign = "&gt;&lt;";
         } else if (signs.some((sign) => sign === "0")) {
           combinedSign = "0";
         } else {
@@ -523,7 +527,7 @@ function XSignLine({
           points
         );
 
-        if (signs.some((sign) => sign === "∅")) {
+        if (signs.some((sign) => sign === "&gt;&lt;")) {
           return (
             <span
               key={point.value}
@@ -532,7 +536,7 @@ function XSignLine({
                 left: `${position}%`,
               }}
             >
-              ∅
+              &gt;&lt;
             </span>
           );
         }
